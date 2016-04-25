@@ -8,6 +8,7 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <!-- this is not really a UI, more of a test harness-->
         <StackPanel
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
@@ -33,18 +34,12 @@
                 </Style>
             </StackPanel.Resources>
             <Button
-                Margin="4"
-                HorizontalAlignment="Center"
                 Content="Enrol"
                 Click="OnEnrolAsync" />
             <Button
-                Margin="4"
-                HorizontalAlignment="Center"
                 Content="Identify"
                 Click="OnIdentifyAsync" />
             <Button
-                Margin="4"
-                HorizontalAlignment="Center"
                 Content="Clear All Profiles"
                 Click="OnClearAllProfilesAsync" />
         </StackPanel>

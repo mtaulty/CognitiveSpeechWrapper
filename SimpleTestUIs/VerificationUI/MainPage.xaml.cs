@@ -15,7 +15,7 @@
     {
       this.InitializeComponent();
     }
-    async void OnGetAll(object sender, RoutedEventArgs e)
+    async void OnClearAllAsync(object sender, RoutedEventArgs e)
     {
       VerificationClient client = new VerificationClient(cognitiveApiKey);
 
@@ -26,7 +26,7 @@
         await client.RemoveVerificationProfileAsync(profile.VerificationProfileId);
       }
     }
-    async void OnGetPhrase(object sender, RoutedEventArgs e)
+    async void OnGetRandomPhraseAsync(object sender, RoutedEventArgs e)
     {
       // VerificationClient is my wrapper for the verification REST API.
       // It needs my Cognitive speaker recognition API key in order to work.
@@ -40,7 +40,7 @@
       // Display that phrase back in the UI.
       this.txtPhrase.Text = randomlySelectedVerificationPhrase;
     }
-    async void OnEnroll(object sender, RoutedEventArgs e)
+    async void OnEnrollAsync(object sender, RoutedEventArgs e)
     {
       // VerificationClient is my wrapper for the verification REST API.
       // It needs my Cognitive speaker recognition API key in order to work.
@@ -79,11 +79,6 @@
 
       } while (!enrolled);
     }
-    static async Task ConfirmMessageAsync(string text)
-    {
-      MessageDialog dialog = new MessageDialog(text);
-      await dialog.ShowAsync();
-    }
     async void OnVerifyAsync(object sender, RoutedEventArgs e)
     {
       // Take the user's profile ID back from the UI as we haven't stored
@@ -114,7 +109,12 @@
       await ConfirmMessageAsync(
         $"Your speech was {result.Result}ed with {result.Confidence} confidence");
     }
-#error NEED AN API KEY HERE
-    static readonly string cognitiveApiKey = "";
+    static async Task ConfirmMessageAsync(string text)
+    {
+      MessageDialog dialog = new MessageDialog(text);
+      await dialog.ShowAsync();
+    }
+    //#error NEED AN API KEY HERE
+    static readonly string cognitiveApiKey = "a2e6583d1c654f488d256595d95cf6ee";
   }
 }

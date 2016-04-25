@@ -60,6 +60,7 @@
         // How much more speech does the service need to hear from the user?
         remainingTalkTime = result.ProcessingResult.RemainingEnrollmentSpeechTime;
       }
+      await ConfirmMessageAsync("enrolled, thanks");
     }
     async void OnIdentifyAsync(object sender, RoutedEventArgs e)
     {
@@ -107,7 +108,7 @@
       }
       await ConfirmMessageAsync(message);
     }
-    async void OnDeleteAllAsync(object sender, RoutedEventArgs e)
+    async void OnClearAllProfilesAsync(object sender, RoutedEventArgs e)
     {
       var client = new IdentificationClient(cognitiveApiKey);
 
@@ -123,7 +124,7 @@
       MessageDialog dialog = new MessageDialog(text);
       await dialog.ShowAsync();
     }
-#error NEED AN API KEY HERE
-    static readonly string cognitiveApiKey = "";
+//#error NEED AN API KEY HERE
+    static readonly string cognitiveApiKey = "a2e6583d1c654f488d256595d95cf6ee";
   }
 }
