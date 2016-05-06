@@ -15,7 +15,7 @@
 </references>
   </metadata>
 <files>
-<file src="properties\CognitiveAPIWrapper.rd.xml" target="lib/win50/CognitiveAPIWrapper/properties"/>
-<file src="bin\debug\CognitiveAPIWrapper.pri" target="lib/win50"/>
+<file src="properties\CognitiveAPIWrapper.rd.xml" target="lib/NetCore50/CognitiveAPIWrapper/properties"/>
+<file src="bin\debug\CognitiveAPIWrapper.pri" target="lib/NetCore50"/>
 </files>
 </package>
